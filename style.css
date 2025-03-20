@@ -12,11 +12,51 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 header {
-  padding-left: 3%;
+  padding: 0 3%;
   min-height: 6vh;
   font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#searchBar {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+}
+#searchBar div {
+  display: flex;
+  border: 3px solid rgb(133, 132, 132);
+  border-radius: 30px;
+  padding: 1% 5%;
+  justify-content: center;
+  align-items: center;
+}
+
+#searchBar input {
+  font-size: 2rem;
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+}
+
+#searchBar button {
+  width: 20vh;
+  height: 5vh;
+  font-size: 1.5rem;
+  border: none;
+  background-color: hsl(127, 66%, 43%);
+  color: white;
+  border-radius: 10px;
+  box-shadow: 2px 2px 3px rgb(0, 0, 0);
+  transition: background-color 0.3s ease;
+  cursor: pointer;
 }
 nav {
+  font-size: 1.2rem;
   min-height: 6vh;
   background-color: hsla(0, 0%, 0%, 0.882);
   color: white;
@@ -153,7 +193,7 @@ select {
   cursor: pointer;
 }
 
-button {
+.appBtn {
   width: 30%;
   font-size: 0.9rem;
   border: none;
@@ -165,10 +205,12 @@ button {
   transition: background-color 0.3s ease;
   cursor: pointer;
 }
-button:hover {
+.appBtn:hover,
+#searchBar button:hover {
   background-color: hsl(127, 66%, 33%);
 }
-button:active {
+.appBtn:active,
+#searchBar button:active {
   background-color: hsl(127, 66%, 53%);
 }
 .chartContainer {
