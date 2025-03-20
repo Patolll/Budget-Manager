@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  font-family: "Open Sans", sans-serif;
+}
+header {
+  padding-left: 3%;
+  min-height: 6vh;
+  background-color: hsla(0, 0%, 0%, 0.882);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.7rem;
+  margin-bottom: 2%;
+}
+article {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5%;
+}
+
+.container {
+  width: 45%;
+  border: 2px solid black;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 2px 2px 3px black;
+  margin-bottom: 2%;
+}
+.formDiv {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6%;
+}
+form {
+  padding: 2%;
+  display: flex;
+  flex-direction: row;
+  gap: 2%;
+  position: relative;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+p {
+  margin: 0;
+  position: relative;
+  top: 5%;
+  font-size: 2rem;
+  font-weight: bold;
+  font-style: italic;
+}
+input[type="number"] {
+  width: 50%;
+  min-height: 25px;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+select {
+  width: 50%;
+  min-height: 32px;
+  font-size: 1rem;
+  background-color: white;
+  position: relative;
+  border-radius: 5px;
+}
+
+button {
+  width: 30%;
+  font-size: 0.9rem;
+  border: none;
+  background-color: hsl(127, 66%, 43%);
+  color: white;
+  min-height: 32px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 3px rgb(0, 0, 0);
+  transition: background-color 0.3s ease;
+}
+button:hover {
+  background-color: hsl(127, 66%, 33%);
+}
+button:active {
+  background-color: hsl(127, 66%, 53%);
+}
+.chartContainer {
+  width: 80%;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsla(0, 0%, 0%, 0.882);
+  font-size: 1rem;
+  margin-top: auto;
+  color: white;
+  width: 100%;
+  min-height: 6vh;
+}
+@media (max-width: 800px) {
+  .container {
+    width: 90%;
+    margin: 2%;
+    padding: 2%;
+    /* Pełna szerokość na małych ekranach */
+  }
+  input[type="number"] {
+    font-size: 0.7rem;
+  }
+}

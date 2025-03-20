@@ -9,19 +9,60 @@
   </head>
   <body>
     <header>
-      <h1>Budget Manager</h1>
+      <h2>Budget Manager app</h2>
     </header>
-    <aside></aside>
+
     <main>
       <article>
-        <section id="formDisplay"></section>
-        <section id="chartDisplay">
-          <canvas id="myChart"></canvas>
+        <section id="expense" class="container">
+          <p>Expenses</p>
+          <div class="formDiv">
+            <form id="expenseForm">
+              <input
+                type="number"
+                id="expenseInput"
+                placeholder="Input an amount ($)"
+              />
+              <select id="expenseSelect">
+                <option value="">Select Expense</option>
+                <option value="food">Food</option>
+                <option value="transport">Transport</option>
+                <option value="fun">Fun</option>
+              </select>
+              <button>Add Expense</button>
+            </form>
+          </div>
+          <div class="chartContainer">
+            <canvas id="expenseChart"></canvas>
+          </div>
+        </section>
+
+        <section id="income" class="container">
+          <p>Income</p>
+          <div class="formDiv">
+            <form id="incomeForm">
+              <input
+                type="number"
+                id="incomeInput"
+                placeholder="Input an amount ($)"
+              />
+              <select id="incomeSelect">
+                <option value="">Select Income</option>
+                <option value="food">Salary</option>
+                <option value="transport">Transport</option>
+                <option value="fun">Fun</option>
+              </select>
+              <button>add income</button>
+            </form>
+          </div>
+          <div class="chartContainer">
+            <canvas id="incomeChart"></canvas>
+          </div>
         </section>
       </article>
     </main>
 
-    <footer></footer>
+    <footer>&#169;CopyRight by Patoll_</footer>
 
     <script src="script.js"></script>
     <script src="chart.js"></script>
