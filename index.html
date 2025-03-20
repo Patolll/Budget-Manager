@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Budget Manager</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="shortcut icon"
+      href="business-time-solid.svg"
+      type="image/x-icon"
+    />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
@@ -13,17 +18,39 @@
     </header>
 
     <main>
-      <article>
+      <article id="descriptionArticle">
+        <section id="description">
+          <p class="descriptionPointsBox">
+            ✅ Add expenses – Choose a category (e.g., food, transport,
+            entertainment) and enter the amount.
+          </p>
+          <p class="descriptionPointsBox">
+            ✅ Record income – Keep track of your earnings and other financial
+            inflows.
+          </p>
+          <p class="descriptionPointsBox">
+            ✅ Analyze data with charts – The site visualizes your finances
+            using bar, pie, and line charts.
+          </p>
+          <p class="descriptionPointsBox">
+            ✅ Responsive design – The layout adapts to different screen sizes
+            for a seamless experience.
+          </p>
+        </section>
+      </article>
+      <article id="chartsArticle">
         <section id="expense" class="container">
-          <p>Expenses</p>
+          <p>Expenses <i class="fa-solid fa-receipt"></i></p>
           <div class="formDiv">
             <form id="expenseForm">
               <input
                 type="number"
                 id="expenseInput"
                 placeholder="Input an amount ($)"
+                min="1"
+                required
               />
-              <select id="expenseSelect">
+              <select id="expenseSelect" required>
                 <option value="">Select Expense</option>
                 <option value="food">Food</option>
                 <option value="transport">Transport</option>
@@ -38,15 +65,17 @@
         </section>
 
         <section id="income" class="container">
-          <p>Income</p>
+          <p>Income <i class="fa-solid fa-sack-dollar"></i></p>
           <div class="formDiv">
             <form id="incomeForm">
               <input
                 type="number"
                 id="incomeInput"
                 placeholder="Input an amount ($)"
+                min="1"
+                required
               />
-              <select id="incomeSelect">
+              <select id="incomeSelect" required>
                 <option value="">Select Income</option>
                 <option value="food">Salary</option>
                 <option value="transport">Transport</option>
@@ -62,8 +91,11 @@
       </article>
     </main>
 
-    <footer>&#169;CopyRight by Patoll_</footer>
-
+    <footer>&#169;Copyright by Patoll_</footer>
+    <script
+      src="https://kit.fontawesome.com/61a1475d1e.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="script.js"></script>
     <script src="chart.js"></script>
   </body>

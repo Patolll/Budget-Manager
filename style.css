@@ -20,13 +20,38 @@ header {
   font-size: 0.7rem;
   margin-bottom: 2%;
 }
-article {
+#descriptionArticle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+#chartsArticle {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 5%;
 }
-
+#description {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6%;
+  justify-content: center;
+  box-shadow: 2px 2px 5px black;
+  margin-bottom: 2%;
+}
+.descriptionPointsBox {
+  border-radius: 5px;
+  min-width: 45%;
+  width: 45%;
+  border: 2px solid black;
+  padding: 5px;
+  background: linear-gradient(to left, rgb(129, 238, 129), rgb(188, 220, 185));
+}
+.descriptionPointsBox p {
+  color: white;
+  font-size: 1.5rem;
+}
 .container {
   width: 45%;
   border: 2px solid black;
@@ -55,13 +80,14 @@ form {
   justify-content: center;
   align-items: center;
 }
-p {
+.container p {
   margin: 0;
   position: relative;
   top: 5%;
   font-size: 2rem;
   font-weight: bold;
   font-style: italic;
+  color: hsla(0, 0%, 0%, 0.882);
 }
 input[type="number"] {
   width: 50%;
@@ -76,6 +102,7 @@ select {
   background-color: white;
   position: relative;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 button {
@@ -88,6 +115,7 @@ button {
   border-radius: 5px;
   box-shadow: 2px 2px 3px rgb(0, 0, 0);
   transition: background-color 0.3s ease;
+  cursor: pointer;
 }
 button:hover {
   background-color: hsl(127, 66%, 33%);
