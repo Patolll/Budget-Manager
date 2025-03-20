@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
-
+html {
+  scroll-behavior: smooth;
+}
 body {
   margin: 0;
   padding: 0;
@@ -12,13 +14,24 @@ body {
 header {
   padding-left: 3%;
   min-height: 6vh;
+  font-size: 1rem;
+}
+nav {
+  min-height: 6vh;
   background-color: hsla(0, 0%, 0%, 0.882);
   color: white;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
-  font-size: 0.7rem;
-  margin-bottom: 2%;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 1%;
+  transition: background-color 0.3s ease;
+}
+nav a:hover {
+  background-color: rgb(65, 225, 145);
 }
 #descriptionArticle {
   display: flex;
@@ -37,20 +50,55 @@ header {
   flex-wrap: wrap;
   gap: 6%;
   justify-content: center;
+  flex-direction: column;
+}
+.descriptionImage {
+  background-image: url("calculator.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
   box-shadow: 2px 2px 5px black;
-  margin-bottom: 2%;
+}
+.descriptionText {
+  font-size: 2rem;
+  width: 60%;
+  margin-left: 10%;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+  line-height: 2;
+}
+.descriptionBlur {
+  height: 100%;
+  backdrop-filter: blur(15px);
+  backdrop-filter: contrast(50%);
+  display: flex;
+  flex-direction: column;
 }
 .descriptionPointsBox {
   border-radius: 5px;
-  min-width: 45%;
-  width: 45%;
-  border: 2px solid black;
+  min-width: 60%;
   padding: 5px;
-  background: linear-gradient(to left, rgb(129, 238, 129), rgb(188, 220, 185));
-}
-.descriptionPointsBox p {
+  margin-left: 5%;
+  backdrop-filter: blur(1000px);
+  font-weight: 600;
   color: white;
   font-size: 1.5rem;
+}
+#title {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5% 3%;
+}
+.arrowDown {
+  color: black;
+}
+#arrowDown:visited {
+  color: black;
+}
+#black {
+  background-color: black;
+  width: 100%;
+  margin-bottom: 30vh;
 }
 .container {
   width: 45%;
