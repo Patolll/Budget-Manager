@@ -267,7 +267,7 @@ footer {
     width: 90%;
     margin: 2%;
     padding: 2%;
-    height: 100vh;
+    height: 130vh;
     /* Pełna szerokość na małych ekranach */
   }
   input[type="number"] {
