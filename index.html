@@ -26,6 +26,7 @@
         <button>Search</button>
       </div>
     </header>
+
     <nav>
       <a href="https://github.com/Patolll" target="_blank"
         ><i class="fa-brands fa-github" style="color: #ffffff"></i> Github</a
@@ -48,6 +49,7 @@
         me</a
       >
     </nav>
+
     <main>
       <article id="descriptionArticle">
         <div class="descriptionImage">
@@ -78,6 +80,7 @@
           </div>
         </div>
       </article>
+
       <div id="title">
         <a class="arrowDown" href="#chartsArticle"
           ><i class="fa-solid fa-arrow-down fa-5x"></i
@@ -102,11 +105,15 @@
               />
               <select id="expenseSelect" required>
                 <option value="">Select Expense</option>
-                <option value="food">Food</option>
-                <option value="transport">Transport</option>
-                <option value="fun">Fun</option>
+                <option value="Rent">Rent</option>
+                <option value="Taxes">Taxes</option>
+                <option value="Transport">Transport</option>
+                <option value="Entertainment">Entertainment</option>
+                <option value="Food">Food</option>
+                <option value="Other">Other</option>
               </select>
-              <button class="appBtn">Add Expense</button>
+              <button class="addBtn" type="submit">Add Expense</button>
+              <button class="deleteBtn" type="submit">Delete Expense</button>
             </form>
           </div>
           <div class="chartContainer">
@@ -127,11 +134,12 @@
               />
               <select id="incomeSelect" required>
                 <option value="">Select Income</option>
-                <option value="food">Salary</option>
-                <option value="transport">Transport</option>
-                <option value="fun">Fun</option>
+                <option value="Salary">Salary</option>
+                <option value="Side-job">Side-job</option>
+                <option value="Other">Other</option>
               </select>
-              <button class="appBtn">add income</button>
+              <button class="addBtn" type="submit">Add Income</button>
+              <button class="deleteBtn" type="submit">Delete Income</button>
             </form>
           </div>
           <div class="chartContainer">

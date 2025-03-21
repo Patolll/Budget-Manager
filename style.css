@@ -26,6 +26,9 @@ header {
   align-items: center;
   gap: 5%;
 }
+#searchBar i {
+  padding: 3%;
+}
 #searchBar div {
   display: flex;
   border: 3px solid rgb(133, 132, 132);
@@ -64,6 +67,7 @@ nav {
   justify-content: space-evenly;
   align-items: center;
 }
+
 nav a {
   color: white;
   text-decoration: none;
@@ -147,16 +151,15 @@ nav a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   box-shadow: 2px 2px 3px black;
   margin-bottom: 2%;
+  height: 80vh;
 }
 .formDiv {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 6%;
 }
 form {
   padding: 2%;
@@ -169,9 +172,8 @@ form {
   align-items: center;
 }
 .container p {
-  margin: 0;
+  margin-top: 3%;
   position: relative;
-  top: 5%;
   font-size: 2rem;
   font-weight: bold;
   font-style: italic;
@@ -193,11 +195,11 @@ select {
   cursor: pointer;
 }
 
-.appBtn {
+.addBtn,
+.deleteBtn {
   width: 30%;
   font-size: 0.9rem;
   border: none;
-  background-color: hsl(127, 66%, 43%);
   color: white;
   min-height: 32px;
   border-radius: 5px;
@@ -205,16 +207,29 @@ select {
   transition: background-color 0.3s ease;
   cursor: pointer;
 }
-.appBtn:hover,
+.deleteBtn {
+  background-color: hsl(0, 63%, 46%);
+}
+.deleteBtn:hover {
+  background-color: hsl(0, 63%, 36%);
+}
+.deleteBtn:active {
+  background-color: hsl(0, 63%, 56%);
+}
+.addBtn {
+  background-color: hsl(127, 66%, 43%);
+}
+.addBtn:hover,
 #searchBar button:hover {
   background-color: hsl(127, 66%, 33%);
 }
-.appBtn:active,
+.addBtn:active,
 #searchBar button:active {
   background-color: hsl(127, 66%, 53%);
 }
 .chartContainer {
-  width: 80%;
+  width: 90%;
+  height: 70%;
 }
 
 footer {
