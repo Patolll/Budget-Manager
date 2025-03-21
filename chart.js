@@ -122,19 +122,75 @@ document.getElementById("incomeForm").addEventListener("submit", (event) => {
   document.getElementById("incomeInput").value = "";
   document.getElementById("incomeSelect").value = "";
 });
+
 function loadChartDataFromLocalStorage(chartId) {
   const savedData = localStorage.getItem(chartId);
   if (savedData) {
     const { data } = JSON.parse(localStorage.getItem(chartId));
     charts[chartId].data.datasets[0].data = data;
+
     charts[chartId].update();
   }
 }
+
 window.onload = function () {
   loadChartDataFromLocalStorage("expenseChart");
   loadChartDataFromLocalStorage("incomeChart");
 };
-function clearChart() {
-  localStorage.clear();
-  window.location.reload();
+function clearChart(chartId) {
+  if (charts[chartId]) {
+    charts[chartId].data.datasets[0].data = [];
+    charts[chartId].update();
+  }
+  localStorage.removeItem(chartId);
+  setTimeout(() => {
+    window.location.reload(); // Teraz przeładowanie strony
+  }, 100);
 }
+function changeChartType(chartId, newType) {
+  if (newType === "") {
+    console.warn("Please choose a valid chart style.");
+    return;
+  }
+
+  if (charts[chartId]) {
+    const chartData = JSON.parse(JSON.stringify(charts[chartId].data));
+    charts[chartId].destroy();
+
+    const ctx = document.getElementById(chartId).getContext("2d");
+    charts[chartId] = new Chart(ctx, {
+      type: newType,
+      data: chartData,
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+      },
+    });
+  }
+}
+document
+  .getElementById("expenseChartSelect")
+  .addEventListener("change", function () {
+    const newType = this.value;
+    if (newType !== "") {
+      changeChartType("expenseChart", newType);
+    } else {
+      console.warn("Please select a valid chart style.");
+    }
+  });
+document
+  .getElementById("incomeChartSelect")
+  .addEventListener("change", function () {
+    const newType = this.value;
+    if (newType !== "") {
+      changeChartType("incomeChart", newType);
+    } else {
+      console.warn("Please select a valid chart style.");
+    }
+  });
+document.getElementById("clearExpense").addEventListener("click", () => {
+  clearChart("expenseChart");
+});
+document.getElementById("clearIncome").addEventListener("click", () => {
+  clearChart("incomeChart");
+});

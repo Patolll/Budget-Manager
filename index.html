@@ -120,9 +120,13 @@
             <canvas id="expenseChart"></canvas>
           </div>
           <div class="chartOptions">
-            <button class="clearBtn" onclick="clearChart()">Clear Chart</button>
-            <select class="chartOptionsSelect">
+            <button id="clearExpense" class="clearBtn">Clear Chart</button>
+            <select id="expenseChartSelect" class="chartOptionsSelect">
               <option value="">Choose chart style</option>
+              <option value="bar">bar</option>
+              <option value="line">line</option>
+              <option value="pie">Pie</option>
+              <option value="doughnut">Doughnut</option>
             </select>
           </div>
         </section>
@@ -150,6 +154,16 @@
           </div>
           <div class="chartContainer">
             <canvas id="incomeChart"></canvas>
+          </div>
+          <div class="chartOptions">
+            <button id="clearIncome" class="clearBtn">Clear Chart</button>
+            <select id="incomeChartSelect" class="chartOptionsSelect">
+              <option value="">Choose chart style</option>
+              <option value="bar">bar</option>
+              <option value="line">line</option>
+              <option value="pie">Pie</option>
+              <option value="doughnut">Doughnut</option>
+            </select>
           </div>
         </section>
       </article>
