@@ -60,13 +60,34 @@ function addDataToChart(chartId, category, value) {
     }
   }
 }
+function deleteDataFromChart(chartId, category, value) {
+  if (charts[chartId]) {
+    const categoryIndex = charts[chartId].data.labels.indexOf(category);
+
+    if (categoryIndex !== -1) {
+      const newValue =
+        charts[chartId].data.datasets[0].data[categoryIndex] - value;
+      if (newValue >= 0) {
+        charts[chartId].data.datasets[0].data[categoryIndex] = newValue;
+        charts[chartId].update();
+      } else {
+        console.warn(`Value for ${category} would go below 0.`);
+      }
+    }
+  }
+}
 
 document.getElementById("expenseForm").addEventListener("submit", (event) => {
   event.preventDefault();
   const incomeAmount = Number(document.getElementById("expenseInput").value);
   const incomeCategory = document.getElementById("expenseSelect").value;
   if (incomeAmount > 0 && incomeCategory) {
-    addDataToChart("expenseChart", incomeCategory, incomeAmount);
+    const buttonClicked = event.submitter;
+    if (buttonClicked.classList.contains("addBtn")) {
+      addDataToChart("expenseChart", incomeCategory, incomeAmount);
+    } else if (buttonClicked.classList.contains("deleteBtn")) {
+      deleteDataFromChart("expenseChart", incomeCategory, incomeAmount);
+    }
   } else {
     console.error("Not valid data");
   }
@@ -78,11 +99,18 @@ document.getElementById("incomeForm").addEventListener("submit", (event) => {
   event.preventDefault();
   const incomeAmount = Number(document.getElementById("incomeInput").value);
   const incomeCategory = document.getElementById("incomeSelect").value;
+
   if (incomeAmount > 0 && incomeCategory) {
-    addDataToChart("incomeChart", incomeCategory, incomeAmount);
+    const buttonClicked = event.submitter;
+    if (buttonClicked.classList.contains("addBtn")) {
+      addDataToChart("incomeChart", incomeCategory, incomeAmount);
+    } else if (buttonClicked.classList.contains("deleteBtn")) {
+      deleteDataFromChart("incomeChart", incomeCategory, incomeAmount);
+    }
   } else {
     console.error("Not valid data");
   }
+
   document.getElementById("incomeInput").value = "";
   document.getElementById("incomeSelect").value = "";
 });
