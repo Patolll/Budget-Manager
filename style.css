@@ -185,7 +185,7 @@ input[type="number"] {
   border-radius: 5px;
   font-size: 1rem;
 }
-select {
+.chartSelect {
   width: 50%;
   min-height: 32px;
   font-size: 1rem;
@@ -229,7 +229,26 @@ select {
 }
 .chartContainer {
   width: 90%;
-  height: 70%;
+  height: 65%;
+}
+.chartOptions {
+  max-width: 100%;
+  width: 100%;
+  max-height: 10%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-sizing: border-box;
+}
+.chartOptionsSelect {
+  width: 45%;
+  min-height: 32px;
+  font-size: 1rem;
+  background-color: white;
+  position: relative;
+  border-radius: 5px;
+  cursor: pointer;
+  box-sizing: border-box;
 }
 
 footer {

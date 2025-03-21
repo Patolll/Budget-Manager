@@ -103,7 +103,7 @@
                 min="1"
                 required
               />
-              <select id="expenseSelect" required>
+              <select class="chartSelect" id="expenseSelect" required>
                 <option value="">Select Expense</option>
                 <option value="Rent">Rent</option>
                 <option value="Taxes">Taxes</option>
@@ -119,6 +119,12 @@
           <div class="chartContainer">
             <canvas id="expenseChart"></canvas>
           </div>
+          <div class="chartOptions">
+            <button class="clearBtn" onclick="clearChart()">Clear Chart</button>
+            <select class="chartOptionsSelect">
+              <option value="">Choose chart style</option>
+            </select>
+          </div>
         </section>
 
         <section id="income" class="container">
@@ -132,7 +138,7 @@
                 min="1"
                 required
               />
-              <select id="incomeSelect" required>
+              <select class="chartSelect" id="incomeSelect" required>
                 <option value="">Select Income</option>
                 <option value="Salary">Salary</option>
                 <option value="Side-job">Side-job</option>

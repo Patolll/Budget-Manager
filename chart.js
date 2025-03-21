@@ -50,6 +50,12 @@ createChart(
   [0, 0, 0],
   "Income"
 );
+function saveChartDataToLocalStorage(chartId) {
+  if (charts[chartId]) {
+    const chartData = charts[chartId].data.datasets[0].data;
+    localStorage.setItem(chartId, JSON.stringify({ data: chartData }));
+  }
+}
 function addDataToChart(chartId, category, value) {
   if (charts[chartId]) {
     const categoryIndex = charts[chartId].data.labels.indexOf(category);
@@ -57,6 +63,7 @@ function addDataToChart(chartId, category, value) {
     if (categoryIndex !== -1) {
       charts[chartId].data.datasets[0].data[categoryIndex] += value;
       charts[chartId].update();
+      saveChartDataToLocalStorage(chartId);
     }
   }
 }
@@ -70,6 +77,7 @@ function deleteDataFromChart(chartId, category, value) {
       if (newValue >= 0) {
         charts[chartId].data.datasets[0].data[categoryIndex] = newValue;
         charts[chartId].update();
+        saveChartDataToLocalStorage(chartId);
       } else {
         console.warn(`Value for ${category} would go below 0.`);
       }
@@ -114,3 +122,19 @@ document.getElementById("incomeForm").addEventListener("submit", (event) => {
   document.getElementById("incomeInput").value = "";
   document.getElementById("incomeSelect").value = "";
 });
+function loadChartDataFromLocalStorage(chartId) {
+  const savedData = localStorage.getItem(chartId);
+  if (savedData) {
+    const { data } = JSON.parse(localStorage.getItem(chartId));
+    charts[chartId].data.datasets[0].data = data;
+    charts[chartId].update();
+  }
+}
+window.onload = function () {
+  loadChartDataFromLocalStorage("expenseChart");
+  loadChartDataFromLocalStorage("incomeChart");
+};
+function clearChart() {
+  localStorage.clear();
+  window.location.reload();
+}
