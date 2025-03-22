@@ -12,7 +12,7 @@ function createChart(chartId, chartType, labels, data, chartLabel) {
           backgroundColor: [
             "green",
             "red",
-            "green",
+            "blue",
             "orange",
             "purple",
             "yellow",
@@ -33,7 +33,20 @@ function createChart(chartId, chartType, labels, data, chartLabel) {
           bottom: 10,
         },
       },
+      plugins: {
+        datalabels: {
+          anchor: "end",
+          align: "top",
+          color: "black",
+          font: {
+            weight: "bold",
+            size: 14,
+          },
+          formatter: (value) => value.toFixed(2),
+        },
+      },
     },
+    plugins: [ChartDataLabels],
   });
 }
 createChart(
@@ -203,10 +216,24 @@ function changeChartType(chartId, newType) {
       options: {
         responsive: true,
         maintainAspectRatio: false,
+        plugins: {
+          datalabels: {
+            anchor: "end",
+            align: "top",
+            color: "black",
+            font: {
+              weight: "bold",
+              size: 14,
+            },
+            formatter: (value) => value.toFixed(2),
+          },
+        },
       },
+      plugins: [ChartDataLabels], // Ładowanie pluginu znowu
     });
   }
 }
+
 document
   .getElementById("expenseChartSelect")
   .addEventListener("change", function () {
