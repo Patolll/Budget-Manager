@@ -247,66 +247,53 @@ input[type="number"] {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-}
-.sectionWrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
 }
 .outputContainer {
+  width: 95%;
   border: 2px solid black;
   border-radius: 5px;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   box-shadow: 2px 2px 3px black;
-  min-height: 75vh;
-  height: 75vh;
-  width: 95%;
-  padding: 2%;
-  margin-bottom: 5%;
+  margin-bottom: 2%;
+  min-height: 80vh;
 }
-
 .textCont {
-  width: 40%;
-  border: 2px solid black;
-  box-shadow: 2px 2px 3px black;
+  width: 95%;
+  margin: 2%;
+  padding: 1%;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  height: 65vh;
 }
 .outputChartCont {
-  width: 55%;
-  height: 100%;
+  width: 100%;
+  height: 65vh; /* Dostosuj wysokość */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 .balanceBoxCont {
   width: 100%;
   display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  height: 100%;
-  overflow: hidden;
+  justify-content: space-evenly;
+  gap: 20px;
 }
 .balanceBox {
   width: 100%;
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 20px;
   text-align: center;
 }
 .balanceDesc {
-  width: 80%;
+  width: 90%;
   border-radius: 5px;
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: white;
   display: flex;
   justify-content: center;

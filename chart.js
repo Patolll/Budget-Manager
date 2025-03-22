@@ -10,21 +10,21 @@ function createChart(chartId, chartType, labels, data, chartLabel) {
           label: chartLabel,
           data: data,
           backgroundColor: [
+            "green",
             "red",
-            "blue",
             "green",
             "orange",
             "purple",
             "yellow",
           ],
-          barPercentage: 0.5,
+          barPercentage: 0.3,
         },
       ],
     },
     options: {
       responsive: true, // Umożliwia elastyczne dostosowanie rozmiaru
       maintainAspectRatio: false, // Jeśli chcesz, by wykres nie zachowywał proporcji
-      aspectRatio: 1, // Współczynnik proporcji (szerokość:wysokość)
+      aspectRatio: 2, // Współczynnik proporcji (szerokość:wysokość)
       layout: {
         padding: {
           top: 10,
@@ -50,13 +50,7 @@ createChart(
   [0, 0, 0],
   "Income"
 );
-createChart(
-  "outputChart",
-  "bar",
-  ["Income", "Expenses", "Total"],
-  [0, 0, 0],
-  "Total"
-);
+createChart("outputChart", "bar", ["Income", "Expenses"], [0, 0, 0], "Total");
 function saveChartDataToLocalStorage(chartId) {
   if (charts[chartId]) {
     const chartData = charts[chartId].data.datasets[0].data;
@@ -71,6 +65,8 @@ function addDataToChart(chartId, category, value) {
       charts[chartId].data.datasets[0].data[categoryIndex] += value;
       charts[chartId].update();
       saveChartDataToLocalStorage(chartId);
+      updateSummaryChart();
+      balanceResult();
     }
   }
 }
@@ -85,6 +81,8 @@ function deleteDataFromChart(chartId, category, value) {
         charts[chartId].data.datasets[0].data[categoryIndex] = newValue;
         charts[chartId].update();
         saveChartDataToLocalStorage(chartId);
+        updateSummaryChart();
+        balanceResult();
       } else {
         console.warn(`Value for ${category} would go below 0.`);
       }
@@ -139,10 +137,44 @@ function loadChartDataFromLocalStorage(chartId) {
     charts[chartId].update();
   }
 }
+function updateSummaryChart() {
+  const incomeData =
+    JSON.parse(localStorage.getItem("incomeChart"))?.data || [];
+  const expenseData =
+    JSON.parse(localStorage.getItem("expenseChart"))?.data || [];
+
+  const totalIncome = incomeData.reduce((acc, val) => acc + val, 0); // Suma dochodów
+  const totalExpense = expenseData.reduce((acc, val) => acc + val, 0); // Suma wydatków
+
+  if (charts["outputChart"]) {
+    charts["outputChart"].data.datasets[0].data = [totalIncome, totalExpense];
+    charts["outputChart"].update();
+  }
+}
+
+function addDataToSummaryChart() {
+  const expenseData =
+    JSON.parse(localStorage.getItem("expenseChart"))?.data || [];
+  const incomeData =
+    JSON.parse(localStorage.getItem("incomeChart"))?.data || [];
+
+  // Sumowanie danych
+  const totalData = expenseData.map(
+    (expense, index) => expense + (incomeData[index] || 0)
+  );
+
+  // Zaktualizowanie wykresu podsumowującego
+  if (charts["outputChart"]) {
+    charts["outputChart"].data.datasets[0].data = totalData;
+    charts["outputChart"].update();
+  }
+}
 
 window.onload = function () {
   loadChartDataFromLocalStorage("expenseChart");
   loadChartDataFromLocalStorage("incomeChart");
+  updateSummaryChart();
+  balanceResult();
 };
 function clearChart(chartId) {
   if (charts[chartId]) {
@@ -202,16 +234,28 @@ document.getElementById("clearIncome").addEventListener("click", () => {
   clearChart("incomeChart");
 });
 function balanceResult() {
-  const income = Number(document.getElementById("incomeResult").textContent);
-  const expense = Number(document.getElementById("expenseResult").textContent);
-  const result = Number(document.getElementById("balanceResult").textContent);
+  const expenseData =
+    JSON.parse(localStorage.getItem("expenseChart"))?.data || [];
+  const incomeData =
+    JSON.parse(localStorage.getItem("incomeChart"))?.data || [];
+
+  const totalIncome = incomeData.reduce((acc, val) => acc + val, 0);
+  const totalExpense = expenseData.reduce((acc, val) => acc + val, 0);
+  const totalResult = totalIncome - totalExpense;
+
+  const result = document.getElementById("balanceResult");
+  const income = document.getElementById("incomeResult");
+  const expense = document.getElementById("expenseResult");
+
+  result.textContent = totalResult;
+  income.textContent = totalIncome;
+  expense.textContent = totalExpense;
   let color = document.querySelector(".balanceBoxColor");
-  if (income > expense) {
-    color.style.backgroundColor = "green";
-  } else if (income < expense) {
-    color.style.backgroundColor = "red";
+  if (totalIncome > totalExpense) {
+    color.style.backgroundColor = "rgb(7, 182, 7)";
+  } else if (totalIncome < totalExpense) {
+    color.style.backgroundColor = " rgb(180, 37, 15)";
   } else {
     color.style.backgroundColor = "grey";
   }
 }
-balanceResult();
