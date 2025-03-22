@@ -282,6 +282,7 @@ input[type="number"] {
 }
 .outputChartCont {
   width: 55%;
+  height: 100%;
 }
 .balanceBoxCont {
   width: 100%;
@@ -318,6 +319,7 @@ input[type="number"] {
   background-color: rgb(180, 37, 15);
 }
 .balanceBoxColor {
+  background-color: grey;
 }
 footer {
   display: flex;

@@ -201,3 +201,17 @@ document.getElementById("clearExpense").addEventListener("click", () => {
 document.getElementById("clearIncome").addEventListener("click", () => {
   clearChart("incomeChart");
 });
+function balanceResult() {
+  const income = Number(document.getElementById("incomeResult").textContent);
+  const expense = Number(document.getElementById("expenseResult").textContent);
+  const result = Number(document.getElementById("balanceResult").textContent);
+  let color = document.querySelector(".balanceBoxColor");
+  if (income > expense) {
+    color.style.backgroundColor = "green";
+  } else if (income < expense) {
+    color.style.backgroundColor = "red";
+  } else {
+    color.style.backgroundColor = "grey";
+  }
+}
+balanceResult();
