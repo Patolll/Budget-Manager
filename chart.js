@@ -42,7 +42,7 @@ function createChart(chartId, chartType, labels, data, chartLabel) {
             weight: "bold",
             size: 14,
           },
-          formatter: (value) => value.toFixed(2),
+          formatter: (value) => value.toFixed(2) + "$",
         },
       },
     },
@@ -105,7 +105,10 @@ function deleteDataFromChart(chartId, category, value) {
 
 document.getElementById("expenseForm").addEventListener("submit", (event) => {
   event.preventDefault();
-  const incomeAmount = Number(document.getElementById("expenseInput").value);
+  const incomeAmount = parseFloat(
+    document.getElementById("expenseInput").value
+  );
+
   const incomeCategory = document.getElementById("expenseSelect").value;
   if (incomeAmount > 0 && incomeCategory) {
     const buttonClicked = event.submitter;
@@ -274,9 +277,9 @@ function balanceResult() {
   const income = document.getElementById("incomeResult");
   const expense = document.getElementById("expenseResult");
 
-  result.textContent = totalResult;
-  income.textContent = totalIncome;
-  expense.textContent = totalExpense;
+  result.textContent = totalResult.toFixed(2);
+  income.textContent = totalIncome.toFixed(2);
+  expense.textContent = totalExpense.toFixed(2);
   let color = document.querySelector(".balanceBoxColor");
   if (totalIncome > totalExpense) {
     color.style.backgroundColor = "rgb(7, 182, 7)";
