@@ -50,6 +50,13 @@ createChart(
   [0, 0, 0],
   "Income"
 );
+createChart(
+  "outputChart",
+  "bar",
+  ["Income", "Expenses", "Total"],
+  [0, 0, 0],
+  "Total"
+);
 function saveChartDataToLocalStorage(chartId) {
   if (charts[chartId]) {
     const chartData = charts[chartId].data.datasets[0].data;

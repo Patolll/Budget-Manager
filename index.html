@@ -15,32 +15,31 @@
   <body>
     <header>
       <h2>Budget Manager app</h2>
-      <div id="searchBar">
-     
     </header>
 
     <nav>
       <div>
-      <a href="https://github.com/Patolll" target="_blank"
-        ><i class="fa-brands fa-github" style="color: #ffffff"></i> Github</a
-      >
-      <a
-        href="https://www.linkedin.com/in/patryk-dmochowski-a7454b2a6/"
-        target="_blank"
-        ><i class="fa-brands fa-linkedin" style="color: #ffffff"></i>
-        LinkedIn</a
-      >
-      <a href="https://www.facebook.com/patryk.dmochowski.31/" target="_blank"
-        ><i class="fa-brands fa-facebook" style="color: #ffffff"></i>
-        Facebook</a
-      >
-      <a href="https://www.instagram.com/p_dmochowski/" target="_blank"
-        ><i class="fa-brands fa-instagram" style="color: #ffffff"></i> Instagram
-      </a>
-      <a href="mailto:'patryk_dmochowski@wp.pl'" target="_blank"
-        ><i class="fa-solid fa-envelope" style="color: #ffffff"></i> Contact
-        me</a
-      >
+        <a href="https://github.com/Patolll" target="_blank"
+          ><i class="fa-brands fa-github" style="color: #ffffff"></i> Github</a
+        >
+        <a
+          href="https://www.linkedin.com/in/patryk-dmochowski-a7454b2a6/"
+          target="_blank"
+          ><i class="fa-brands fa-linkedin" style="color: #ffffff"></i>
+          LinkedIn</a
+        >
+        <a href="https://www.facebook.com/patryk.dmochowski.31/" target="_blank"
+          ><i class="fa-brands fa-facebook" style="color: #ffffff"></i>
+          Facebook</a
+        >
+        <a href="https://www.instagram.com/p_dmochowski/" target="_blank"
+          ><i class="fa-brands fa-instagram" style="color: #ffffff"></i>
+          Instagram
+        </a>
+        <a href="mailto:'patryk_dmochowski@wp.pl'" target="_blank"
+          ><i class="fa-solid fa-envelope" style="color: #ffffff"></i> Contact
+          me</a
+        >
       </div>
     </nav>
 
@@ -75,7 +74,7 @@
         </div>
       </article>
 
-      <div id="title">
+      <div class="title">
         <a class="arrowDown" href="#chartsArticle"
           ><i class="fa-solid fa-arrow-down fa-5x"></i
         ></a>
@@ -162,8 +161,45 @@
         </section>
       </article>
 
-      <article id = "outputArticle">
-        <section id = "outputDescription"></section>
+      <div class="title2">
+        <h1>Your Total</h1>
+      </div>
+      <article id="outputArticle">
+        <section id="outputDescription" class="outputContainer">
+          <div class="sectionWrapper">
+            <div class="textCont">
+              <div class="balanceBoxCont">
+                <div class="balanceBox">
+                  <h1>
+                    Your total incomes <i class="fa-solid fa-sack-dollar"></i>
+                  </h1>
+                  <div class="balanceDesc incomeBoxColor">
+                    <p id="incomeResult">2400</p>
+                  </div>
+                </div>
+                <div class="balanceBox">
+                  <h1>
+                    Your total expenses <i class="fa-solid fa-receipt"></i>
+                  </h1>
+                  <div class="balanceDesc expensesBoxColor">
+                    <p id="expenseResult">1200</p>
+                  </div>
+                </div>
+                <div class="balanceBox">
+                  <h1>
+                    Your balance <i class="fa-solid fa-scale-balanced"></i>
+                  </h1>
+                  <div class="balanceDesc balanceBoxColor">
+                    <p id="balanceResult">1200</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="outputChartCont">
+              <canvas id="outputChart"></canvas>
+            </div>
+          </div>
+        </section>
       </article>
     </main>
 
@@ -172,7 +208,7 @@
       src="https://kit.fontawesome.com/61a1475d1e.js"
       crossorigin="anonymous"
     ></script>
- 
+
     <script src="chart.js"></script>
   </body>
 </html>

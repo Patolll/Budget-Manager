@@ -106,25 +106,23 @@ nav a:hover {
   color: white;
   font-size: 1.5rem;
 }
-#title {
+.title,
+.title2 {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   padding: 0.5% 3%;
 }
-#title h1 {
-  text-align: center;
+.title {
+  justify-content: space-between;
+}
+.title2 {
+  justify-content: center;
 }
 .arrowDown {
   color: black;
 }
 #arrowDown:visited {
   color: black;
-}
-#black {
-  background-color: black;
-  width: 100%;
-  margin-bottom: 30vh;
 }
 .container {
   width: 45%;
@@ -135,7 +133,8 @@ nav a:hover {
   align-items: center;
   box-shadow: 2px 2px 3px black;
   margin-bottom: 2%;
-  height: 80vh;
+  min-height: 80vh;
+  padding-bottom: 2%;
 }
 .formDiv {
   width: 100%;
@@ -244,6 +243,82 @@ input[type="number"] {
 .clearBtn:active {
   background-color: hsl(268, 65%, 63%);
 }
+#outputArticle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.sectionWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.outputContainer {
+  border: 2px solid black;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  box-shadow: 2px 2px 3px black;
+  min-height: 75vh;
+  height: 75vh;
+  width: 95%;
+  padding: 2%;
+  margin-bottom: 5%;
+}
+
+.textCont {
+  width: 40%;
+  border: 2px solid black;
+  box-shadow: 2px 2px 3px black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 65vh;
+}
+.outputChartCont {
+  width: 55%;
+}
+.balanceBoxCont {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+.balanceBox {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+}
+.balanceDesc {
+  width: 80%;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.incomeBoxColor {
+  background-color: rgb(7, 182, 7);
+}
+.expensesBoxColor {
+  background-color: rgb(180, 37, 15);
+}
+.balanceBoxColor {
+}
 footer {
   display: flex;
   justify-content: center;
@@ -280,7 +355,8 @@ footer {
     color: white;
     font-size: 0.9rem;
   }
-  #title {
+  .title,
+  .title2 {
     font-size: 0.7rem;
   }
 
