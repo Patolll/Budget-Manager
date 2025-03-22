@@ -19,45 +19,7 @@ header {
   align-items: center;
   justify-content: space-between;
 }
-#searchBar {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 5%;
-}
-#searchBar i {
-  padding: 3%;
-}
-#searchBar div {
-  display: flex;
-  border: 3px solid rgb(133, 132, 132);
-  border-radius: 30px;
-  padding: 1% 5%;
-  justify-content: center;
-  align-items: center;
-}
 
-#searchBar input {
-  font-size: 2rem;
-  height: 100%;
-  width: 100%;
-  border: none;
-  outline: none;
-}
-
-#searchBar button {
-  width: 20vh;
-  height: 5vh;
-  font-size: 1.5rem;
-  border: none;
-  background-color: hsl(127, 66%, 43%);
-  color: white;
-  border-radius: 10px;
-  box-shadow: 2px 2px 3px rgb(0, 0, 0);
-  transition: background-color 0.3s ease;
-  cursor: pointer;
-}
 nav {
   font-size: 1.2rem;
   min-height: 6vh;
@@ -131,7 +93,11 @@ nav a:hover {
 #title {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 0.5% 3%;
+}
+#title h1 {
+  text-align: center;
 }
 .arrowDown {
   color: black;
@@ -277,10 +243,67 @@ footer {
   .container {
     width: 90%;
     margin: 2%;
-    padding: 2%;
-    height: 130vh;
+    padding: 3%;
+    height: 80%;
   }
   input[type="number"] {
     font-size: 0.7rem;
   }
+  #descriptionArticle {
+    height: 40%;
+  }
+  .descriptionText {
+    font-size: 1.2rem;
+    width: 90%;
+  }
+  .descriptionPointsBox {
+    border-radius: 5px;
+    padding: 0;
+    margin-left: 5%;
+    font-weight: 600;
+    color: white;
+    font-size: 0.9rem;
+  }
+  #title {
+    font-size: 0.7rem;
+  }
 }
+/* #description {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6%;
+  justify-content: center;
+  flex-direction: column;
+}
+.descriptionImage {
+  background-image: url("calculator.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  box-shadow: 2px 2px 5px black;
+}
+.descriptionText {
+  font-size: 2rem;
+  width: 60%;
+  margin-left: 10%;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+  line-height: 2;
+}
+.descriptionBlur {
+  height: 100%;
+  backdrop-filter: blur(15px);
+  backdrop-filter: contrast(50%);
+  display: flex;
+  flex-direction: column;
+}
+.descriptionPointsBox {
+  border-radius: 5px;
+  min-width: 60%;
+  padding: 5px;
+  margin-left: 5%;
+  backdrop-filter: blur(1000px);
+  font-weight: 600;
+  color: white;
+  font-size: 1.5rem;
+} */
