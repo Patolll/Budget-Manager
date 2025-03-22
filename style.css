@@ -60,6 +60,7 @@ nav a:hover {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  transition: all 0.3s ease;
 }
 #chartsArticle {
   display: flex;
@@ -73,6 +74,7 @@ nav a:hover {
   gap: 6%;
   justify-content: center;
   flex-direction: column;
+  transition: all 0.3s ease;
 }
 .descriptionImage {
   background-image: url("calculator.jpg");
@@ -80,6 +82,7 @@ nav a:hover {
   background-size: cover;
   width: 100%;
   box-shadow: 2px 2px 5px black;
+  transition: all 0.3s ease;
 }
 .descriptionText {
   font-size: 2rem;
@@ -88,6 +91,7 @@ nav a:hover {
   font-weight: 600;
   color: rgb(255, 255, 255);
   line-height: 2;
+  transition: all 0.3s ease;
 }
 .descriptionBlur {
   height: 100%;
@@ -135,6 +139,7 @@ nav a:hover {
   margin-bottom: 2%;
   min-height: 80vh;
   padding-bottom: 2%;
+  transition: all 0.3s ease;
 }
 .formDiv {
   width: 100%;
@@ -212,7 +217,7 @@ input[type="number"] {
 }
 .chartContainer {
   width: 90%;
-  height: 65%;
+  height: 65vh;
 }
 .chartOptions {
   max-width: 100%;
@@ -269,7 +274,7 @@ input[type="number"] {
 }
 .outputChartCont {
   width: 100%;
-  height: 65vh; /* Dostosuj wysokość */
+  height: 65vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -288,6 +293,7 @@ input[type="number"] {
   align-items: center;
   flex-direction: column;
   text-align: center;
+  transition: all 0.3s ease;
 }
 .balanceDesc {
   width: 90%;
@@ -376,6 +382,16 @@ footer {
 }
 @media (max-width: 250px) {
   nav a {
+    font-size: 0.4rem;
+  }
+}
+@media (max-width: 950px) {
+  .balanceBox {
+    font-size: 0.6rem;
+  }
+}
+@media (max-width: 600px) {
+  .balanceBox {
     font-size: 0.4rem;
   }
 }

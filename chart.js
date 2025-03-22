@@ -22,9 +22,9 @@ function createChart(chartId, chartType, labels, data, chartLabel) {
       ],
     },
     options: {
-      responsive: true, // Umożliwia elastyczne dostosowanie rozmiaru
-      maintainAspectRatio: false, // Jeśli chcesz, by wykres nie zachowywał proporcji
-      aspectRatio: 2, // Współczynnik proporcji (szerokość:wysokość)
+      responsive: true,
+      maintainAspectRatio: false,
+      aspectRatio: 2,
       layout: {
         padding: {
           top: 10,
